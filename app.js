@@ -5,7 +5,7 @@ var MemoryDataStore = require('@slack/client').MemoryDataStore;
 
 var CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS;
 
-var token = 'xoxb-93645223905-8V1ni1kobXmOhniD3tAEVPng';
+var token = 'private';
 
 var rtm = new RtmClient(token, {
   // Sets the level of logging we require
