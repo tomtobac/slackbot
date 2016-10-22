@@ -72,7 +72,8 @@ function getLaunch(text, channel) {
       headers.each((index) => rows[index].unshift(headers[index].innerHTML))
 
       let date = new Date();
-      if (text.includes('dema')) date.setDate(date.getDate() + 1)
+      let dema = text.includes('dema')
+      if (dema) date.setDate(date.getDate() + 1)
       let today = rows.find(x => x[0].includes(date.getDate()))
       let message;
       if (today != null) {
@@ -87,7 +88,7 @@ function getLaunch(text, channel) {
         message += `\n:knife_fork_plate: ${config.env.url}`
 
       } else {
-        message = `Dema, ${date.toISOString().slice(0, 10)}, no hi ha dinar`
+        message = `${dema? 'Dema' : 'Avui'}, ${date.toISOString().slice(0, 10)}, no hi ha dinar`
       }
       rtm.sendMessage(message, channel, function messageSent() { });
     }
