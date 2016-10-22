@@ -1,6 +1,7 @@
 ## Quickstart
 ---
 - Install packages
+
 `npm install`
 
 - Create a file with config keys called `config.js` 
@@ -17,8 +18,9 @@ exports.env = {
 ```
 
 - And run it
+
 `npm run start`
 
 ### Current commands
-- <bot_name> (dinar) + [dema?] 
-- <bot_name> (tetas | boobs)
+- _bot name_ dinar [dema] `show menu of today and tomorrow`
+- _bot name_ boobs `show random tits` 
