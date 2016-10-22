@@ -1,18 +1,18 @@
 // 4 scrapping
-var jsdom = require("node-jsdom");
+const jsdom = require("node-jsdom");
 
 // 4 ajax
-var fetch = require('node-fetch');
+const fetch = require('node-fetch');
 
 
 // The memory data store is a collection of useful functions we can include in our RtmClient
-var MemoryDataStore = require('@slack/client').MemoryDataStore;
-var RtmClient = require('@slack/client').RtmClient;
-var CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS;
-var RTM_EVENTS = require('@slack/client').RTM_EVENTS;
+const MemoryDataStore = require('@slack/client').MemoryDataStore;
+const RtmClient = require('@slack/client').RtmClient;
+const CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS;
+const RTM_EVENTS = require('@slack/client').RTM_EVENTS;
 config = require('./config');
 
-var rtm = new RtmClient(config.env.token, {
+const rtm = new RtmClient(config.env.token, {
   // Sets the level of logging we require
   logLevel: 'error',
   // Initialise a data store for our client, this will load additional helper functions for the storing and retrieval of data
@@ -24,10 +24,10 @@ rtm.start();
 // Wait for the client to connect
 rtm.on(CLIENT_EVENTS.RTM.RTM_CONNECTION_OPENED, function () {
   // Get the user's name
-  var user = rtm.dataStore.getUserById(rtm.activeUserId);
+  let user = rtm.dataStore.getUserById(rtm.activeUserId);
 
   // Get the team's name
-  var team = rtm.dataStore.getTeamById(rtm.activeTeamId);
+  let team = rtm.dataStore.getTeamById(rtm.activeTeamId);
 
   // Log the slack team name and the bot's name
   console.log('Connected to ' + team.name + ' as ' + user.name);
