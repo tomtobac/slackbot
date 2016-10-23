@@ -83,7 +83,7 @@ function getLaunch(text, channel) {
         message += `+---------------------------------------------+\n`
         message += `${d} | Tiempo restante: (${diffBetweenDates()})\n`
         message += `+---------------------------------------------+\n`
-        message += `${today.map(x => x + '\n')}`
+        message += `${today.reduce((prev, curr, i, array) => prev += '\n' + curr)}`
         message += '```'
         message += `\n:knife_fork_plate: ${config.env.url}`
 
